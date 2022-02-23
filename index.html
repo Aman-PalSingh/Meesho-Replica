@@ -9,6 +9,10 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="https://static.meeshosupply.com/web/meesho-logo-fav.png">
     <link rel="stylesheet" href="./styles/homePage.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Online Shopping Site for Fashion, Electronics, Home & More | Meesho</title>
 </head>
 <body> 
@@ -362,10 +366,42 @@
             <button id="signup-btn"><h5>Sign up now</h5></button>
         </div>
     </div>
+    
+    </div>
     <!-- Footer -->
+    <div id="footer">
+
+    </div>
+    <div class="aboutMeesho">
+
     </div>
 </body>
-<script>
+<script type="module">
+    import {footer,aboutMeesho} from "./components/footer.js"
+    let footer_div = document.getElementById("footer");
+    footer_div.innerHTML = footer();
+    let meeshoContent =  document.querySelector(".aboutMeesho")
+    meeshoContent.innerHTML = aboutMeesho();
+    console.log(aboutMeesho());
+
+    let button = document.getElementById("expansion");
+    button.addEventListener('click', function () {
+        let angle_down = document.getElementById('buttonChange');
+        let aboutContent = document.getElementById("aboutMeeshoContent")
+        if (aboutContent.style.display === "none") {
+            aboutContent.style.display = "block"
+
+            angle_down.removeAttribute("class");
+            angle_down.setAttribute("class", "fa-solid fa-angle-up")
+
+        } else {
+            aboutContent.style.display = "none";
+            angle_down.removeAttribute("class");
+            angle_down.setAttribute("class", "fa-solid fa-angle-down")
+        }
+    })
+
+
     let current_users = JSON.parse(localStorage.getItem('current_bussiness_user'));
     let consumer_current_users = JSON.parse(localStorage.getItem('current_user'));
     let supp = document.getElementById('SupplyTag');
@@ -397,4 +433,5 @@
 
 
 </script>
+
 </html>
