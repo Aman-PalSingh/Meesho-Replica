@@ -365,36 +365,6 @@
     <!-- Footer -->
     </div>
 </body>
-<script>
-    let current_users = JSON.parse(localStorage.getItem('current_bussiness_user'));
-    let consumer_current_users = JSON.parse(localStorage.getItem('current_user'));
-    let supp = document.getElementById('SupplyTag');
-    let cart = document.getElementById('cart');
-    console.log(cart);
-    console.log(current_users);
-    supp.addEventListener('click',function(){
-        if ( current_users === null){
-        window.location.href = 'messho_login.html'
-    }
-    else {
-        window.location.href = 'meesho_addProduct.html'
-    }
-
-    }) ;
-
-    cart.addEventListener('click',function(){
-        if (consumer_current_users === null){
-            window.location.href = 'consumer_login.html'
-        }
-        else {
-            window.location.href = 'meesho_cart.html'
-        }
-    })
-    let ViewAl = document.getElementById('ViewAl');
-     ViewAl.addEventListener('click',function(){
-         window.location.href = 'messho_show_product.html';
-     })
-
-
+<script src="./scripts/footer.js">
 </script>
 </html>
