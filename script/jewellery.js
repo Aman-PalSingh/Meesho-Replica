@@ -363,6 +363,10 @@ function appenddata(data) {
         console.log(el.title)
         var product_div = document.createElement("div")
         product_div.setAttribute("id", "product_div")
+        product_div.addEventListener("click", function () {
+            product_description(el);
+        });
+
 
         var product_img = document.createElement("img");
         product_img.src = el.image;
@@ -382,7 +386,7 @@ function appenddata(data) {
 
         var mrp = document.createElement("p")
         mrp.setAttribute("id", "mrp");
-        mrp.innerText = `₹${Math.round(Math.random() * (1100 - 500) + 500)}`;
+        mrp.innerText = `₹${el.mrp}`;
 
         var per_discount = document.createElement("p")
         per_discount.setAttribute("id", "per_discount")
@@ -392,7 +396,7 @@ function appenddata(data) {
 
         //creating a div to store extra discount------------------------------------------------------------------------
 
-        var ext_discount = document.createElement("din")
+        var ext_discount = document.createElement("div")
         ext_discount.setAttribute("id", "ext_discount")
 
         var discount_img = document.createElement("img")
@@ -464,6 +468,12 @@ function handleprice() {
             return Number(b.rating) - Number(a.rating)
         })
     }
-    document.querySelector("#container").innerHTML="";
+    document.querySelector("#container").innerHTML = "";
     appenddata(dataarr);
+}
+
+function product_description(el) {
+    data = JSON.stringify(el)
+    localStorage.setItem("product_detail", data)
+    window.location.href = 'product_description.html'
 }
