@@ -379,3 +379,27 @@ function appenddata(data) {
         document.querySelector("#container").append(product_div)
     });
 }
+
+
+function handleprice() {
+
+    var shortv = document.querySelector("#select_tag").value
+
+    if (shortv == "high") {
+        dataarr.sort(function (a, b) {
+            return Number(b.price) - Number(a.price);
+        });
+    }
+    if (shortv == "low") {
+        dataarr.sort(function (a, b) {
+            return Number(a.price) - Number(b.price);
+        });
+    }
+    if (shortv == "rating") {
+        dataarr.sort(function (a, b) {
+            return Number(b.rating) - Number(a.rating)
+        })
+    }
+    document.querySelector("#container").innerHTML="";
+    appenddata(dataarr);
+}

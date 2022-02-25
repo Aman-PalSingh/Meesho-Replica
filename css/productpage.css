@@ -18,6 +18,18 @@
     line-height: 20px;
     font-family: "Mier book";
 }
+#sort-buttons{
+    margin-bottom: 0px;
+}
+#select_tag{
+    border: .5px solid rgb(182, 177, 177);
+    height: 44px;
+    width: 326px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px; 
+}
 #container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
