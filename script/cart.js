@@ -37,7 +37,7 @@ var arr = [
       
 appendData(arr);
 function appendData(arr) {
-      var main_div = document.getElementById('left_section');
+      var main_div = document.getElementById('left_section'); 
        arr.forEach(function(elem)
     {
 
