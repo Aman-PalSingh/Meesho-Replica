@@ -58,6 +58,8 @@
     flex: 1;
     border-right: 1px solid rgba(0, 0, 0, 0.226);
     padding-right: 1em;
+    overflow: scroll;
+    height: 450px
   }
   .product-charges {
     display: flex;
