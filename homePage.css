@@ -620,7 +620,8 @@ a {
 }
 /* Footer */
 #footer {
-  width: 70%;
+  width: 1300px;
+  margin: auto;
   display: grid;
   grid-template-columns: 400px repeat(4, 1fr);
   margin: auto;

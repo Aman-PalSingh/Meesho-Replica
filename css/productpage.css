@@ -1,3 +1,7 @@
+#container,#product_page_title{
+    max-width: 1300px;
+    margin: auto;
+}
 #product_page_title{
     text-align: left;
     margin-bottom: 8px;
@@ -31,19 +35,20 @@
     line-height: 20px; 
 }
 #container {
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    margin-right: 10px;
+    grid-template-columns: repeat(4, 25%);
+    grid-gap: 0px;
 }
 
 #product_div {
     height: 527px;
     width: 306px;
+    margin-bottom: 10px;
     border: 1px solid rgb(240, 240, 240);
 }
 
-img {
+#product_div>img {
     object-fit: cover;
     width: 100%;
     height: 61%;
