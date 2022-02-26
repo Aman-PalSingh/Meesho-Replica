@@ -20,7 +20,7 @@ function appendData(arr) {
         let remove = document.createElement("p");
            remove.onclick = () => {
                arr.splice(index, 1);
-               localStorage.setItem("product_data",arr)
+               localStorage.setItem("product_data",JSON.stringify(arr))
                main_div.innerHTML = "";
                appendData(arr);
         }
