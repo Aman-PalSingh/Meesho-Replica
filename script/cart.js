@@ -1,44 +1,10 @@
-var arr = [
-    
-        {
-        image: "https://images.meesho.com/images/products/38038484/xzpnb_512.jpg",
-        title: 'Trendy Elegant Women Dresses',
-        mrp:399,
-        price: 299,
-        rating:4.0,
-        review: 9
-        },
-        {
-        image: "https://images.meesho.com/images/products/20543549/666a5_512.jpg",
-        title: 'Trendy Feminine Women Dresses',
-        mrp:692,
-        price:592,
-        rating:4.5,
-        review:1
-        },
-        {
-        image: "https://images.meesho.com/images/products/68485169/kha44_512.jpg",
-        title: 'Aagyeyi Ensemble Sarees',
-        mrp:767,
-        price:667,
-        rating:5.0,
-        review:3
-        },
-        {
-        image: "https://images.meesho.com/images/products/22043185/5e8c8_512.jpg",
-        title: 'Fancy Glamorous Women Jumpsuits',
-        mrp:482,
-        price:282,
-        rating:5.0,
-        review:1
-        },
-
-]
+var arr = JSON.parse(localStorage.getItem("product_data")) || [];
+console.log(arr)
       
 appendData(arr);
 function appendData(arr) {
       var main_div = document.getElementById('left_section'); 
-       arr.forEach(function(elem)
+       arr.forEach(function(elem,index)
     {
 
         let cart_item = document.createElement('div')
@@ -52,6 +18,12 @@ function appendData(arr) {
         let title = document.createElement("p");
         title.textContent = elem.title;
         let remove = document.createElement("p");
+           remove.onclick = () => {
+               arr.splice(index, 1);
+               localStorage.setItem("product_data",arr)
+               main_div.innerHTML = "";
+               appendData(arr);
+        }
         remove.setAttribute("class", "item-remove")
         remove.textContent ="Remove"
         let price = document.createElement('p');
