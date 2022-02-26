@@ -109,6 +109,9 @@
   cursor: pointer;
   background-color: #f43397ad;
 }
+.item-remove:hover {
+  cursor: pointer;
+}
 
 /* Payment Page CSS */
 
