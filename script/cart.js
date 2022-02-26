@@ -1,9 +1,11 @@
-var arr = JSON.parse(localStorage.getItem("product_data")) || [];
-console.log(arr)
+       var arr = JSON.parse(localStorage.getItem("product_data")) || [];
+       // console.log(arr);
+
+       var sum = 0;
       
-appendData(arr);
-function appendData(arr) {
-      var main_div = document.getElementById('left_section'); 
+       appendData(arr);
+       function appendData(arr) {
+       var main_div = document.getElementById('left_section'); 
        arr.forEach(function(elem,index)
     {
 
@@ -19,10 +21,13 @@ function appendData(arr) {
         title.textContent = elem.title;
         let remove = document.createElement("p");
            remove.onclick = () => {
-               arr.splice(index, 1);
-               localStorage.setItem("product_data",JSON.stringify(arr))
-               main_div.innerHTML = "";
-               appendData(arr);
+            arr.splice(index, 1);
+            localStorage.setItem("product_data",JSON.stringify(arr))
+            main_div.innerHTML = "";
+            appendData(arr)
+            appendData_sum(sum);
+         
+               
         }
         remove.setAttribute("class", "item-remove")
         remove.textContent ="Remove"
@@ -47,8 +52,9 @@ function appendData(arr) {
         button1.textContent = '-'
         let button2 = document.createElement('button');
         let quantity_length = document.createElement('p')
-        quantity_length.textContent = '2'
+        quantity_length.textContent = '1'
         button2.textContent = '+';
+          
         qty_change.append(button1, quantity_length, button2);
         item_quantity_div.append(qty, qty_change);
         item_size_div.append(size, free_size)
@@ -56,8 +62,24 @@ function appendData(arr) {
         item_remove.append(title, remove);
         right_cart.append(item_remove, price, size_div);
         cart_item.append(image, right_cart);
-         main_div.append(cart_item);
+        main_div.append(cart_item);
+        appendData_sum(sum)
+
 
 
         })
-    }
+}
+function appendData_sum(sum)
+{   
+     arr.forEach((elem) => {
+     sum = sum + elem.price; 
+     })
+     product_charges.textContent = sum ;
+     if (sum - 100 > 0)
+     {
+     order_total.textContent = sum-100;
+     }else{
+     order_total.textContent = 0;
+     };
+
+      }

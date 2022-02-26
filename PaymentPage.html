@@ -271,7 +271,7 @@
         <h3>Price Details:</h3>
         <div class="product-charges">
           <p>Product Charges:</p>
-          <p>₹1263</p>
+          <p id = "product-charges"></p>
         </div>
         <div class="delivery-charges">
           <p>Delivery Charges:</p>
@@ -287,7 +287,7 @@
         </div>
         <div class="order-total-div">
           <p>Order Total:</p>
-          <p>₹1163</p>
+          <p id = "order_total"></p>
         </div>
         <div><p class="warning-message">Clicking on Continue will not deduct any money</p></div>
         <a href="checkout.html"><button class="cart-continue-button">Place Order</button></a>
@@ -327,3 +327,23 @@
   </div> 
   </body>
 </html>
+<script>
+        let product_charges = document.getElementById("product-charges");
+        let order_total = document.getElementById("order_total");
+        var arr = JSON.parse(localStorage.getItem("product_data")) || [];
+        var sum = 0;
+        appendData_sum(sum)
+
+        function appendData_sum(sum) {
+        arr.forEach((elem) => {
+            sum = sum + elem.price;
+        })
+        product_charges.textContent = sum;
+        if (sum - 100 > 0) {
+            order_total.textContent = sum - 100;
+        } else {
+            order_total.textContent = 0;
+        };
+
+    }   
+</script>
