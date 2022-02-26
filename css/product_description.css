@@ -48,6 +48,11 @@
     font-size: 16px;
 }
 
+#add_to_cart:hover {
+  cursor: pointer;
+  background-color: #f43397ad;
+}
+
 #right_div_container {
     /* width: 537px; */
     height: 700px;
