@@ -63,6 +63,10 @@ section {
 .app_promo-container .right-section img {
   width: 100%;
 }
+.left-section button:hover {
+  cursor: pointer;
+  background-color: #f43397ad;
+}
 
 @media only screen and (max-width: 768px) {
   .app_promo-container {
