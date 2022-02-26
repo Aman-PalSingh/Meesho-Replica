@@ -323,7 +323,7 @@ hr {
   margin-right: 5%;
 }
 .addImg03 {
-  width: 73%;
+  max-width:1300px;
   display: grid;
   grid-template-columns: 30% 20% 18% 18%;
   grid-gap: 4%;
