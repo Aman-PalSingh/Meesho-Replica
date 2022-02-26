@@ -104,5 +104,5 @@ function addtocart(data)
     data_arr.push(data);
     product_data = JSON.stringify(data_arr);
     localStorage.setItem("product_data", product_data);
-    alert("Added Item to Basket");
+    alert("Added Item to Cart");
 }
