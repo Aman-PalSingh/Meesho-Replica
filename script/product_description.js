@@ -96,9 +96,11 @@ function appenddata(data) {
 }
 
 appenddata(data);
-
+//var data_arr = JSON.parse(localStorage.getItem("product_data")) || [];
 function addtocart(data)
-{
-    product_data= JSON.stringify(data)
-    localStorage.setItem("product_data", product_data)
+{   
+    var data_arr = JSON.parse(localStorage.getItem("product_data")) || [];
+    data_arr.push(data);
+    product_data = JSON.stringify(data_arr);
+    localStorage.setItem("product_data", product_data);
 }
