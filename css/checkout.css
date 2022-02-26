@@ -28,10 +28,12 @@ section {
 
 .app_promo-container .left-section h1 {
   font-size: 2.5em;
+  text-align: center;
 }
 
 .app_promo-container .left-section p {
   font-size: 1.2em;
+  text-align: center;
 }
 
 .app_promo-container .left-section button {
@@ -42,6 +44,7 @@ section {
   border-radius: 5px;
   max-width: 19em;
   margin-top: 3em;
+  margin: auto;
 }
 
 .app_promo-container .left-section button p {
