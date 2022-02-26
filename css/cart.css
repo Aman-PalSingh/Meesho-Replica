@@ -105,6 +105,11 @@
       font-weight: bold;
   }
 
+.cart-continue-button:hover {
+  cursor: pointer;
+  background-color: #f43397ad;
+}
+
 /* Payment Page CSS */
 
   .cod-div {
